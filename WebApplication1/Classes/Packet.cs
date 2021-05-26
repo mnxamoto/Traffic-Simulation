@@ -18,6 +18,7 @@ namespace WebApplication1.Classes
         public int countCar;
         public int minSpeed;
         public int maxSpeed;
+        public bool useTrafficLight;
     }
 
     public enum Command
