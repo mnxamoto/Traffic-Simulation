@@ -48,27 +48,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mnxam\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\moise\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mnxam\\source\\repos\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+      "projectUniqueName": "C:\\Users\\moise\\OneDrive\\Рабочий стол\\Trrrafficcc\\WebApplication1\\WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "C:\\Users\\mnxam\\source\\repos\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
-      "packagesPath": "C:\\Users\\mnxam\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mnxam\\source\\repos\\WebApplication1\\WebApplication1\\obj\\",
+      "projectPath": "C:\\Users\\moise\\OneDrive\\Рабочий стол\\Trrrafficcc\\WebApplication1\\WebApplication1.csproj",
+      "packagesPath": "C:\\Users\\moise\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\moise\\OneDrive\\Рабочий стол\\Trrrafficcc\\WebApplication1\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\mnxam\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\moise\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -79,6 +72,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -90,6 +84,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Newtonsoft.Json": {
             "target": "Package",
@@ -114,7 +109,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }

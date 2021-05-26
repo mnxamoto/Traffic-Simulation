@@ -4,8 +4,35 @@
     ViewData["Title"] = "Home page";
 }
 
+<!DOCTYPE html>
+<html>
+
+<body>
 <h2>@Model.Message</h2>
+<style>
+    {
+        .form{
+
+        }
+    }
+</style>
 <form method="post">
-    <input type="number" name="sum" />
+    <div align="right">
+    <p>Количество строк </p>
+    <input type="number" name="sum1" /><br><br>
+    <p>Количество столбцов </p>
+    <input type="number" name="sum2" /><br><br>
+    <p>Количество автомобилей </p>
+    <input type="number" name="sum3" /><br><br>
+    <p>Минимальная скорость </p>
+    <input type="number" name="sum4" /><br><br>
+    <p>Максимальная скорость </p>
+    <input type="number" name="sum5" /><br><br>
     <input type="submit" value="Подключиться" />
+     </div>
 </form>
+
+</body>
+
+
+</html>
