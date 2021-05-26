@@ -29,14 +29,6 @@ namespace WebApplication1.Classes
 
         public bool Connect()
         {
-            /*
-            //Записываем данные с текстбоксов в кеш программы для сохранения
-            Properties.Settings.Default.Address = textBox3.Text;
-            Properties.Settings.Default.Port = textBox4.Text;
-            Properties.Settings.Default.Nick = textBox5.Text;
-            Properties.Settings.Default.Password = textBox6.Text;
-            Properties.Settings.Default.Save(); //Сохраняем*/
-
             //Соединяем сокет с удаленной точкой (сервером)
             server.Connect(IPAddress.Parse("127.0.0.1"), 1001);
             Console.Write($"Соединение с [{server.RemoteEndPoint}] установлено");
@@ -48,7 +40,7 @@ namespace WebApplication1.Classes
             });
 
             //Запускаем этот поток
-            Thread1.Start();
+            //Thread1.Start();
 
             //Отправляем информацию о клиенте на сервер
             //Send(Command.Connect, "");
@@ -56,13 +48,13 @@ namespace WebApplication1.Classes
             return true;
         }
 
-        private void Send(Command command, object messageObject)
+        public void Send(Command command, object messageObject)
         {
             string messageString = JsonConvert.SerializeObject(messageObject);
 
             Packet packet = new Packet();
             packet.Command = command;
-            packet.text = messageString;
+            packet.data = messageString;
 
             string packetString = JsonConvert.SerializeObject(packet);
             byte[] packetBytes = Encoding.GetEncoding(866).GetBytes(packetString);
@@ -92,7 +84,7 @@ namespace WebApplication1.Classes
                     //В зависимости от команды выполняется определённое действие
                     switch (packet.Command)
                     {
-                        case Command.Connect:
+                        case Command.Start:
                             break;
                         default:
                             break;
