@@ -25,11 +25,22 @@ namespace WebApplication1.Pages
 
         }
 
-        public void OnPost(int? sum)
+        public void OnPost(int sum1, int sum2)
         {
+            StartInfo info = new StartInfo();
+            info.countRow = sum1;
+            info.countColumm = sum2;
+            info.countCar = 3;
+            info.minSpeed = 4;
+            info.maxSpeed = 5;
+
             if (SocketHelper.GetInstance().Connect())
             {
                 Message = "Соединение установлено";
+
+
+
+                SocketHelper.GetInstance().Send(Command.Start, info);
             }
             else
             {

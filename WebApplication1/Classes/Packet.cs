@@ -8,11 +8,20 @@ namespace WebApplication1.Classes
     public class Packet
     {
         public Command Command;
-        public string text;
+        public string data;
+    }
+
+    public class StartInfo
+    {
+        public int countRow;
+        public int countColumm;
+        public int countCar;
+        public int minSpeed;
+        public int maxSpeed;
     }
 
     public enum Command
     {
-        Connect
+        Start
     }
 }
