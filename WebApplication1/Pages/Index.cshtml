@@ -1,0 +1,11 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<h2>@Model.Message</h2>
+<form method="post">
+    <input type="number" name="sum" />
+    <input type="submit" value="Подключиться" />
+</form>
