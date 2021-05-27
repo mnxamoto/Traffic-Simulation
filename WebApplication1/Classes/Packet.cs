@@ -23,6 +23,8 @@ namespace WebApplication1.Classes
 
     public enum Command
     {
-        Start
+        Start,
+        GetCrossroadses,
+        GetCars
     }
 }

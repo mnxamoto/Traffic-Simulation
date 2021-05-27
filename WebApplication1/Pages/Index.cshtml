@@ -4,44 +4,49 @@
     ViewData["Title"] = "Home page";
 }
 
-<!DOCTYPE html>
-<html>
-
-<body>
-
-
 <h2>@Model.Message</h2>
 
-
-<form method="get">
-
-    <input type="image">    
-  
-</form>
-
-
 <form method="post">
-<div align="right">
-<table>
-    
-    <p>Количество строк </p>
-    <input type="number" name="sum1" /><br><br>
-    <p>Количество столбцов </p>
-    <input type="number" name="sum2" /><br><br>
-    <p>Количество автомобилей </p>
-    <input type="number" name="sum3" /><br><br>
-    <p>Минимальная скорость </p>
-    <input type="number" name="sum4" /><br><br>
-    <p>Максимальная скорость </p>
-    <input type="number" name="sum5" /><br><br>
-    <input type="number" name="sum1" />
-    <input type="number" name="sum2" />
-    <input type="submit" value="Подключиться" />
-     
-    
+    <table>
+        <tr>
+            <td>
+                <div style="position:relative; width: 500px; height: 1000px;">
+                    <img id="backgroundImage" style="position: absolute; left: 0px; top: 0px;"/>
+                    <img id="mapImage" style="position: absolute; left: 0px; top: 0px;"/>
+                </div>
+            </td>
+            <td>
+                <div align="left">
+                    <p>Количество строк </p>
+                    <input type="number" name="countRow" value="5" />
+                    <p>Количество столбцов </p>
+                    <input type="number" name="countColumm" value="5" />
+                    <p>Количество автомобилей </p>
+                    <input type="number" name="countCar" value="5" />
+                    <p>Минимальная скорость </p>
+                    <input type="number" name="minSpeed" value="10" />
+                    <p>Максимальная скорость </p>
+                    <input type="number" name="maxSpeed" value="100" />
+                    <p></p>
+                    <script>
+                        if (@Model.IsWorked.ToString().ToLower())
+                        {
+                            var backgroundImage = document.getElementById('backgroundImage');
+                            backgroundImage.src = '/background';
+
+                            var mapImage = document.getElementById('mapImage');
+                            setInterval(function ()
+                            {
+                                mapImage.src = '/map?' + Math.random();
+                            }, 1000);
+                        }
+                    </script>
+                    <input type="submit" value="Подключиться"/>
+                </div>
+            </td>
+        </tr>
+    </table>
 </form>
 
-</body>
 
 
-</html>

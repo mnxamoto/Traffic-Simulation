@@ -7,6 +7,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using TrafficSimulation.Classes;
 
 namespace WebApplication1.Classes
 {
@@ -48,6 +49,23 @@ namespace WebApplication1.Classes
             return true;
         }
 
+        public Crossroads[,] GetCrossroadses()
+        {
+            Send(Command.GetCrossroadses);
+            Packet packet = GetPacket();
+
+            Crossroads[,] crossroadsArray = JsonConvert.DeserializeObject<Crossroads[,]>(packet.data);
+            return crossroadsArray;
+        }
+
+        public object GetCars()
+        {
+            Send(Command.GetCars);
+            Packet packet = GetPacket();
+
+            return packet.data;
+        }
+
         public void Send(Command command, object messageObject)
         {
             string messageString = JsonConvert.SerializeObject(messageObject);
@@ -55,6 +73,24 @@ namespace WebApplication1.Classes
             Packet packet = new Packet();
             packet.Command = command;
             packet.data = messageString;
+
+            string packetString = JsonConvert.SerializeObject(packet);
+            byte[] packetBytes = Encoding.GetEncoding("Unicode").GetBytes(packetString);
+
+            try
+            {
+                server.Send(packetBytes);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+        public void Send(Command command)
+        {
+            Packet packet = new Packet();
+            packet.Command = command;
 
             string packetString = JsonConvert.SerializeObject(packet);
             byte[] packetBytes = Encoding.GetEncoding("Unicode").GetBytes(packetString);
@@ -102,7 +138,7 @@ namespace WebApplication1.Classes
         {
             byte[] bytes = new byte[65535];
             int bytesRec = server.Receive(bytes);
-            string data = Encoding.GetEncoding(866).GetString(bytes, 0, bytesRec);
+            string data = Encoding.GetEncoding("Unicode").GetString(bytes, 0, bytesRec);
             Packet packet = JsonConvert.DeserializeObject<Packet>(data);
 
             return packet;

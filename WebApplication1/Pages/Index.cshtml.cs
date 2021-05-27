@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Net.Sockets;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -14,6 +18,7 @@ namespace WebApplication1.Pages
     {
         private readonly ILogger<IndexModel> _logger;
         public string Message { get; set; }
+        public bool IsWorked { get; set; }
 
         public IndexModel(ILogger<IndexModel> logger)
         {
@@ -22,24 +27,28 @@ namespace WebApplication1.Pages
 
         public void OnGet()
         {
-
+            IsWorked = false;
         }
 
-        public void OnPost(int sum1, int sum2)
+        public void OnPost(int countRow, int countColumm, int countCar, int minSpeed, int maxSpeed)
         {
             if (SocketHelper.GetInstance().Connect())
             {
                 Message = "Соединение установлено";
 
                 StartInfo info = new StartInfo();
-                info.countRow = 1;
-                info.countColumm = 2;
-                info.countCar = 3;
-                info.minSpeed = 4;
-                info.maxSpeed = 5;
+                info.countRow = countRow;
+                info.countColumm = countColumm;
+                info.countCar = countCar;
+                info.minSpeed = minSpeed;
+                info.maxSpeed = maxSpeed;
                 info.useTrafficLight = false;
 
                 SocketHelper.GetInstance().Send(Command.Start, info);
+
+                Thread.Sleep(10000);
+
+                IsWorked = true;
             }
             else
             {
