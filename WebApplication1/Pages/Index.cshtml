@@ -4,44 +4,30 @@
     ViewData["Title"] = "Home page";
 }
 
-<!DOCTYPE html>
-<html>
-
-<body>
-
-
 <h2>@Model.Message</h2>
 
-
-<form method="get">
-
-    <input type="image">    
-  
-</form>
-
-
 <form method="post">
-<div align="right">
-<table>
-    
-    <p>Количество строк </p>
-    <input type="number" name="sum1" /><br><br>
-    <p>Количество столбцов </p>
-    <input type="number" name="sum2" /><br><br>
-    <p>Количество автомобилей </p>
-    <input type="number" name="sum3" /><br><br>
-    <p>Минимальная скорость </p>
-    <input type="number" name="sum4" /><br><br>
-    <p>Максимальная скорость </p>
-    <input type="number" name="sum5" /><br><br>
-    <input type="number" name="sum1" />
-    <input type="number" name="sum2" />
-    <input type="submit" value="Подключиться" />
-     
-    
+    <div align="right">
+        <table>
+            <tr>
+                <td>
+                    <img src="Resources/House.jpg" />
+                </td>
+                <td>
+                    <p>Количество строк </p>
+                    <input type="number" name="countRow" value="5"/>
+                    <p>Количество столбцов </p>
+                    <input type="number" name="countColumm" value="5"/>
+                    <p>Количество автомобилей </p>
+                    <input type="number" name="countCar" value="5"/>
+                    <p>Минимальная скорость </p>
+                    <input type="number" name="minSpeed" value="10"/>
+                    <p>Максимальная скорость </p>
+                    <input type="number" name="maxSpeed" value="100"/>
+                    <p></p>
+                    <input type="submit" value="Подключиться" />
+                </td>
+            </tr>
+        </table>
+    </div>
 </form>
-
-</body>
-
-
-</html>
