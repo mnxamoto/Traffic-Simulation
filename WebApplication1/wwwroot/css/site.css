@@ -78,7 +78,8 @@ p {
     right: 24px;
     color: black;
 }
-input [number]{
+input {
+    
     position: relative;
     left: 1110px;
     right: 24px;
@@ -86,19 +87,19 @@ input [number]{
     border-color:darkcyan;
   }
 
-    input [image] {
+/*    input [image] {
         position: absolute;
         left: 24px;
         right: 1110px;
     }
 
-/*    input [sumbit] {
+    input [sumbit] {
         position: fixed;
         left: 24px;
         right: 1110px;
-    }*/
+    }
 
- /*   input [number] {
+    input [number] {
          position: absolute;
         left: 1110px;
         right: 24px;
