@@ -57,7 +57,7 @@ namespace WebApplication1.Classes
             packet.data = messageString;
 
             string packetString = JsonConvert.SerializeObject(packet);
-            byte[] packetBytes = Encoding.GetEncoding(866).GetBytes(packetString);
+            byte[] packetBytes = Encoding.GetEncoding("Unicode").GetBytes(packetString);
 
             try
             {

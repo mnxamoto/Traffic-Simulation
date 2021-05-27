@@ -32,8 +32,8 @@ namespace WebApplication1.Pages
                 Message = "Соединение установлено";
 
                 StartInfo info = new StartInfo();
-                info.countRow = sum1;
-                info.countColumm = sum2;
+                info.countRow = 1;
+                info.countColumm = 2;
                 info.countCar = 3;
                 info.minSpeed = 4;
                 info.maxSpeed = 5;
