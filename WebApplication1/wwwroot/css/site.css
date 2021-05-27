@@ -28,6 +28,7 @@ a {
 -------------------------------------------------- */
 html {
   font-size: 14px;
+  color: aqua;
 }
 @media (min-width: 768px) {
   html {
@@ -59,8 +60,10 @@ html {
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    background-color: #dee2e6;
+
 }
 .footer {
   position: absolute;
@@ -69,3 +72,34 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+p {
+    position: relative;
+    left: 1110px;
+    right: 24px;
+    color: black;
+}
+input [number]{
+    position: relative;
+    left: 1110px;
+    right: 24px;
+    border-style: inset;
+    border-color:darkcyan;
+  }
+
+    input [image] {
+        position: absolute;
+        left: 24px;
+        right: 1110px;
+    }
+
+/*    input [sumbit] {
+        position: fixed;
+        left: 24px;
+        right: 1110px;
+    }*/
+
+ /*   input [number] {
+         position: absolute;
+        left: 1110px;
+        right: 24px;
+    }*/

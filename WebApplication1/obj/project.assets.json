@@ -53,9 +53,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\moise\\OneDrive\\Рабочий стол\\Trrrafficcc\\WebApplication1\\WebApplication1.csproj",
-      "projectName": "WebApplication1",
-      "projectPath": "C:\\Users\\moise\\OneDrive\\Рабочий стол\\Trrrafficcc\\WebApplication1\\WebApplication1.csproj",
+      "projectUniqueName": "C:\\Users\\moise\\OneDrive\\Рабочий стол\\Trrrafficcc\\WebApplication1\\TrafficSimulation.csproj",
+      "projectName": "TrafficSimulation",
+      "projectPath": "C:\\Users\\moise\\OneDrive\\Рабочий стол\\Trrrafficcc\\WebApplication1\\TrafficSimulation.csproj",
       "packagesPath": "C:\\Users\\moise\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\moise\\OneDrive\\Рабочий стол\\Trrrafficcc\\WebApplication1\\obj\\",
       "projectStyle": "PackageReference",

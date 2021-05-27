@@ -47,7 +47,6 @@ C:\Users\moise\OneDrive\Рабочий стол\Trrrafficcc\WebApplication1\bin\
 C:\Users\moise\OneDrive\Рабочий стол\Trrrafficcc\WebApplication1\bin\Debug\netcoreapp3.1\WebApplication1.Views.dll
 C:\Users\moise\OneDrive\Рабочий стол\Trrrafficcc\WebApplication1\bin\Debug\netcoreapp3.1\WebApplication1.Views.pdb
 C:\Users\moise\OneDrive\Рабочий стол\Trrrafficcc\WebApplication1\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
-C:\Users\moise\OneDrive\Рабочий стол\Trrrafficcc\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.csproj.AssemblyReference.cache
 C:\Users\moise\OneDrive\Рабочий стол\Trrrafficcc\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.AssemblyInfoInputs.cache
 C:\Users\moise\OneDrive\Рабочий стол\Trrrafficcc\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.AssemblyInfo.cs
 C:\Users\moise\OneDrive\Рабочий стол\Trrrafficcc\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.csproj.CoreCompileInputs.cache
