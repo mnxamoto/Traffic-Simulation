@@ -6,14 +6,29 @@
 
 <h2>@Model.Message</h2>
 
-<form method="post">
-    <div align="right">
-        <table>
-            <tr>
-                <td>
-                    <img src="Resources/House.jpg" />
-                </td>
-                <td>
+<table>
+    <tr>
+        <td>
+            <form method="get">
+                <canvas id="canvas1"></canvas>
+                    <script>
+                        (function(){
+                            var canvas = document.getElementById('canvas1');
+                            canvas.width = 1000;
+                            canvas.height = 500;
+                            var context = canvas.getContext('2d');
+                            var image1 = new Image();
+                            image1.src = "Images/House.jpg";
+                            image1.onload = function(){
+                                context.drawImage(omage1, 0, 0)
+                            };
+                        })();
+                    </script>
+            </form>
+        </td>
+        <td>
+            <form method="post">
+                <div align="right">
                     <p>Количество строк </p>
                     <input type="number" name="countRow" value="5"/>
                     <p>Количество столбцов </p>
@@ -26,8 +41,11 @@
                     <input type="number" name="maxSpeed" value="100"/>
                     <p></p>
                     <input type="submit" value="Подключиться" />
-                </td>
-            </tr>
-        </table>
-    </div>
-</form>
+                </div>
+            </form>
+        </td>
+    </tr>
+</table>
+
+
+
