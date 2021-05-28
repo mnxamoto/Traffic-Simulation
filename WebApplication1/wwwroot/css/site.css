@@ -78,14 +78,35 @@ p {
     right: 24px;
     color: black;
 }
-input {
-    
+
+
+/*.layer1 {
+    position: absolute;
+    left: 24px;
+    right: 1110px;
+}
+
+.layer2 {
     position: relative;
     left: 1110px;
     right: 24px;
     border-style: inset;
+    border-color: darkcyan;
+}*/
+input {
+    
+    position: relative;
+    left: 500px;
+    right: 24px;
+    border-style: inset;
     border-color:darkcyan;
   }
+p {
+    position: relative;
+    left: 500px;
+    right: 24px;
+}
+
 
 /*    input [image] {
         position: absolute;
