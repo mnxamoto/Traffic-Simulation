@@ -25,6 +25,8 @@ namespace WebApplication1.Classes
     {
         Start,
         GetCrossroadses,
-        GetCars
+        SendCrossroadses,
+        GetCars,
+        SendCars
     }
 }

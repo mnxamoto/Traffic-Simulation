@@ -7,6 +7,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using TrafficSimulation.Classes;
+using WebApplication1.Classes;
 
 namespace TrafficSimulation.Pages
 {
@@ -14,20 +16,11 @@ namespace TrafficSimulation.Pages
     {
         public ActionResult OnGet()
         {
-            Random random = new Random(5);
-
-            Image image2 = new Bitmap(1000, 500);
-            Graphics graphics = Graphics.FromImage(image2);
-            Point point = new Point(random.Next(0, 100), random.Next(0, 100));
-            Size size = new Size(DateTime.Now.Second * 20, random.Next(10, 1000));
-            Rectangle rectangle = new Rectangle(point, size);
-            SolidBrush brush = new SolidBrush(Color.Red);
-            graphics.FillRectangle(brush, rectangle);
-
-            Image Image = new Bitmap($"Resources/CarLeft.png"); //TODO: Сделать вызов функции формирования Image
+            List<Car> cars = SocketHelper.GetInstance().GetCars();
+            Image image = DrawHelper.DrawCars(cars);
 
             var outputStream = new MemoryStream();
-            image2.Save(outputStream, ImageFormat.Png);
+            image.Save(outputStream, ImageFormat.Png);
             outputStream.Seek(0, SeekOrigin.Begin);
 
             return File(outputStream, "image/png");

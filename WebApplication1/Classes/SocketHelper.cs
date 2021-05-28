@@ -53,17 +53,16 @@ namespace WebApplication1.Classes
         {
             Send(Command.GetCrossroadses);
             Packet packet = GetPacket();
-
             Crossroads[,] crossroadsArray = JsonConvert.DeserializeObject<Crossroads[,]>(packet.data);
             return crossroadsArray;
         }
 
-        public object GetCars()
+        public List<Car> GetCars()
         {
             Send(Command.GetCars);
             Packet packet = GetPacket();
-
-            return packet.data;
+            List<Car> cars = JsonConvert.DeserializeObject<List<Car>>(packet.data);
+            return cars;
         }
 
         public void Send(Command command, object messageObject)
