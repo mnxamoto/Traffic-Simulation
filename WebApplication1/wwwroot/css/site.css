@@ -74,18 +74,40 @@ body {
 }
 p {
     position: relative;
-    left: 1110px;
+    left: 1000px;
     right: 24px;
+    bottom: 400px;
+    top: auto;
+    color: black;
+}
+p1 {
+    position: relative;
+    left: 1000px;
+    right: 24px;
+    bottom: 400px;
+    top: auto;
     color: black;
 }
 input {
     
     position: relative;
-    left: 1110px;
+    left: 1000px;
     right: 24px;
+    bottom: 400px;
+    top: auto;
     border-style: inset;
     border-color:darkcyan;
   }
+select {
+    position: relative;
+    left: 1000px;
+    right: 24px;
+    bottom: 400px;
+    top: auto;
+    border-style: inset;
+    border-width: medium;
+    border-color: darkcyan;
+}
 
 /*    input [image] {
         position: absolute;
