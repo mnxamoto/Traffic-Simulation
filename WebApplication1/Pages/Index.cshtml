@@ -7,46 +7,40 @@
 <h2>@Model.Message</h2>
 
 <form method="post">
+    <div style="position:relative; width: 0px; height: 1000px;">
+        <img id="backgroundImage" style="position: absolute; left: 0px; top: 0px;"/>
+        <img id="mapImage" style="position: absolute; left: 0px; top: 0px;"/>
+    </div>
+    <p>Количество строк </p>
+    <input type="number" name="countRow" value="5" />
+    <p>Количество столбцов </p>
+    <input type="number" name="countColumm" value="5" />
+    <p>Количество автомобилей </p>
+    <input type="number" name="countCar" value="5" />
+    <p>Минимальная скорость </p>
+    <input type="number" name="minSpeed" value="10" />
+    <p>Максимальная скорость </p>
+    <input type="number" name="maxSpeed" value="100" />
+    <p></p>
+    <script>
+        if (@Model.IsWorked.ToString().ToLower()) {
+            var backgroundImage = document.getElementById('backgroundImage');
+            backgroundImage.src = '/background';
 
-                <div style="position:relative; width: 50px; height: 500px;">
-                    <img id="backgroundImage" style="position: absolute; left: 0px; top: 0px;"/>
-                    <img id="mapImage" style="position: absolute; left: 0px; top: 0px;"/>
-                </div>
-                    
-                    <p>Количество строк </p>
-                    <input type="number" name="countRow" value="5" />
-                    <p>Количество столбцов </p>
-                    <input type="number" name="countColumm" value="5" />
-                    <p>Количество автомобилей </p>
-                    <input type="number" name="countCar" value="5" />
-                    <p>Минимальная скорость </p>
-                    <input type="number" name="minSpeed" value="10" />
-                    <p>Максимальная скорость </p>
-                    <input type="number" name="maxSpeed" value="100" />
-                    <p></p>
-                    <script>
-
-                        if (@Model.IsWorked.ToString().ToLower())
-                        {
-                            var backgroundImage = document.getElementById('backgroundImage');
-                            backgroundImage.src = '/background';
-
-                            var mapImage = document.getElementById('mapImage');
-                            setInterval(function ()
-                            {
-                                mapImage.src = '/map?' + Math.random();
-                            }, 100);
-                        }
-                    </script>
-                    <select>
-                        <option label="Выберите топологию" value="1" selected disabled></option>
-                        <option>Сетка</option>
-                        <option>Круги</option>
-                    </select><br><br>
-                    
-                    <input type="checkbox" name="a" value="Светофоры"> <p1>Светофоры</p1> <br><br>
-                       
-                    <input type="submit" value="Подключиться"/>
-                
-        
+            var mapImage = document.getElementById('mapImage');
+            setInterval(function () {
+                mapImage.src = '/map?' + Math.random();
+            }, 100);
+        }
+    </script>
+    <select asp-for="Topology">
+        <option label="Выберите топологию" value="" selected disabled></option>
+        <option>Сетка</option>
+        <option>Круги</option>
+    </select>
+    <br><br>
+    <input asp-for="UseTrafficLight"> 
+    <p1>Светофоры</p1> 
+    <br><br>
+    <input type="submit" value="Подключиться"/>
 </form>

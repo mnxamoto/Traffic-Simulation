@@ -11,6 +11,7 @@ namespace TrafficSimulation.Classes
         public Point Current { get; set; }
         public DirectionMotion DirectionMotion { get; set; }
         public DirectionMotion DirectionMotionNext { get; set; }
+        public int Angle { get; set; }
     }
 
     public enum DirectionMotion

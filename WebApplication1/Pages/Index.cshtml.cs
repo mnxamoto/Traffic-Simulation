@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using TrafficSimulation.Classes;
 using WebApplication1.Classes;
 
 namespace WebApplication1.Pages
@@ -19,6 +20,10 @@ namespace WebApplication1.Pages
         private readonly ILogger<IndexModel> _logger;
         public string Message { get; set; }
         public bool IsWorked { get; set; }
+        [BindProperty]
+        public bool UseTrafficLight { get; set; }
+        [BindProperty]
+        public string Topology { get; set; }
 
         public IndexModel(ILogger<IndexModel> logger)
         {
@@ -32,28 +37,48 @@ namespace WebApplication1.Pages
 
         public void OnPost(int countRow, int countColumm, int countCar, int minSpeed, int maxSpeed)
         {
-            if (SocketHelper.GetInstance().Connect())
+            if (Topology != null)
             {
-                Message = "Соединение установлено";
+                if (SocketHelper.GetInstance().Connect())
+                {
+                    DrawHelper.Topology = Topology;
+                    DrawHelper.UseTrafficLight = UseTrafficLight;
+                    Message = "Соединение установлено";
 
-                StartInfo info = new StartInfo();
-                info.countRow = countRow;
-                info.countColumm = countColumm;
-                info.countCar = countCar;
-                info.minSpeed = minSpeed;
-                info.maxSpeed = maxSpeed;
-                info.useTrafficLight = false;
+                    StartInfo info = new StartInfo();
+                    info.countRow = countRow;
+                    info.countColumm = countColumm;
+                    info.countCar = countCar;
+                    info.minSpeed = minSpeed;
+                    info.maxSpeed = maxSpeed;
+                    info.useTrafficLight = UseTrafficLight;
 
-                SocketHelper.GetInstance().Send(Command.Start, info);
+                    switch (Topology)
+                    {
+                        case "Сетка":
+                            SocketHelper.GetInstance().Send(Command.StartGrid, info);
+                            break;
+                        case "Круги":
+                            SocketHelper.GetInstance().Send(Command.StartCircle, info);
+                            break;
+                        default:
+                            break;
+                    }
 
-                Thread.Sleep(10000);
+                    Thread.Sleep(10000);
 
-                IsWorked = true;
+                    IsWorked = true;
+                }
+                else
+                {
+                    Message = "Увы :(";
+                }
             }
             else
             {
-                Message = "Увы :(";
+                Message = "Выберите топологию";
             }
+
         }
     }
 }

@@ -28,11 +28,15 @@ namespace WebApplication1.Classes
         private static Socket server = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         private Thread Thread1;
 
+        public bool IsSend { get; set; }
+
         public bool Connect()
         {
             //Соединяем сокет с удаленной точкой (сервером)
             server.Connect(IPAddress.Parse("127.0.0.1"), 1001);
             Console.Write($"Соединение с [{server.RemoteEndPoint}] установлено");
+
+            IsSend = true;
 
             //Отдельный поток для приёма входящих пакетов и ответа на них
             Thread1 = new Thread(delegate ()
@@ -51,18 +55,36 @@ namespace WebApplication1.Classes
 
         public Crossroads[,] GetCrossroadses()
         {
+            while (!IsSend)
+            {
+
+            }
+
+            IsSend = false;
             Send(Command.GetCrossroadses);
             Packet packet = GetPacket();
             Crossroads[,] crossroadsArray = JsonConvert.DeserializeObject<Crossroads[,]>(packet.data);
+            IsSend = true;
             return crossroadsArray;
         }
 
         public List<Car> GetCars()
         {
-            Send(Command.GetCars);
-            Packet packet = GetPacket();
-            List<Car> cars = JsonConvert.DeserializeObject<List<Car>>(packet.data);
-            return cars;
+            List<Car> cars;
+
+            if (IsSend)
+            {
+                IsSend = false;
+                Send(Command.GetCars);
+                Packet packet = GetPacket();
+                cars = JsonConvert.DeserializeObject<List<Car>>(packet.data);
+                IsSend = true;
+                return cars;
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public void Send(Command command, object messageObject)
@@ -115,7 +137,7 @@ namespace WebApplication1.Classes
 
                     // Получаем пакет от сервера
                     Packet packet = GetPacket();
-
+                    /*
                     //В зависимости от команды выполняется определённое действие
                     switch (packet.Command)
                     {
@@ -123,7 +145,7 @@ namespace WebApplication1.Classes
                             break;
                         default:
                             break;
-                    }
+                    }*/
                 }
             }
             catch (Exception ex)

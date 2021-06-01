@@ -20,7 +20,7 @@ namespace TrafficSimulation.Pages
             Thread.Sleep(1000);
 
             Crossroads[,] crossroadsArray = SocketHelper.GetInstance().GetCrossroadses();
-            Image image = DrawHelper.DrawGrid(crossroadsArray, false);
+            Image image = DrawHelper.DrawCrossroads(crossroadsArray, false);
             var outputStream = new MemoryStream();
             image.Save(outputStream, ImageFormat.Png);
             outputStream.Seek(0, SeekOrigin.Begin);

@@ -17,13 +17,21 @@ namespace TrafficSimulation.Pages
         public ActionResult OnGet()
         {
             List<Car> cars = SocketHelper.GetInstance().GetCars();
-            Image image = DrawHelper.DrawCars(cars);
 
-            var outputStream = new MemoryStream();
-            image.Save(outputStream, ImageFormat.Png);
-            outputStream.Seek(0, SeekOrigin.Begin);
+            if (cars == null)
+            {
+                return null;
+            }
+            else
+            {
+                Image image = DrawHelper.DrawCars(cars);
 
-            return File(outputStream, "image/png");
+                var outputStream = new MemoryStream();
+                image.Save(outputStream, ImageFormat.Png);
+                outputStream.Seek(0, SeekOrigin.Begin);
+
+                return File(outputStream, "image/png");
+            }
         }
     }
 }
