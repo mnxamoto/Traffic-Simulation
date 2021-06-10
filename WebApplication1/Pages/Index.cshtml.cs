@@ -35,50 +35,62 @@ namespace WebApplication1.Pages
             IsWorked = false;
         }
 
-        public void OnPost(int countRow, int countColumm, int countCar, int minSpeed, int maxSpeed)
+        public void OnPost(int countRow, int countColumm, int countCar, int minSpeed, int maxSpeed, string btn1)
         {
-            if (Topology != null)
+            switch (btn1)
             {
-                if (SocketHelper.GetInstance().Connect())
-                {
-                    DrawHelper.Topology = Topology;
-                    DrawHelper.UseTrafficLight = UseTrafficLight;
-                    Message = "Соединение установлено";
+                case "Подключиться":
 
-                    StartInfo info = new StartInfo();
-                    info.countRow = countRow;
-                    info.countColumm = countColumm;
-                    info.countCar = countCar;
-                    info.minSpeed = minSpeed;
-                    info.maxSpeed = maxSpeed;
-                    info.useTrafficLight = UseTrafficLight;
 
-                    switch (Topology)
+                    if (Topology != null)
                     {
-                        case "Сетка":
-                            SocketHelper.GetInstance().Send(Command.StartGrid, info);
-                            break;
-                        case "Круги":
-                            SocketHelper.GetInstance().Send(Command.StartCircle, info);
-                            break;
-                        default:
-                            break;
+                        if (SocketHelper.GetInstance().Connect())
+                        {
+                            DrawHelper.Topology = Topology;
+                            DrawHelper.UseTrafficLight = UseTrafficLight;
+                            Message = "Соединение установлено";
+
+                            StartInfo info = new StartInfo();
+                            info.countRow = countRow;
+                            info.countColumm = countColumm;
+                            info.countCar = countCar;
+                            info.minSpeed = minSpeed;
+                            info.maxSpeed = maxSpeed;
+                            info.useTrafficLight = UseTrafficLight;
+
+                            switch (Topology)
+                            {
+                                case "Сетка":
+                                    SocketHelper.GetInstance().Send(Command.StartGrid, info);
+                                    break;
+                                case "Круги":
+                                    SocketHelper.GetInstance().Send(Command.StartCircle, info);
+                                    break;
+                                default:
+                                    break;
+                            }
+
+                            Thread.Sleep(10000);
+
+                            IsWorked = true;
+                        }
+                        else
+                        {
+                            Message = "Увы :(";
+                        }
                     }
-
-                    Thread.Sleep(10000);
-
-                    IsWorked = true;
-                }
-                else
-                {
-                    Message = "Увы :(";
-                }
+                    else
+                    {
+                        Message = "Выберите топологию";
+                    }
+                    break;
+                case "Остановить":
+                    IsWorked = false;
+                    SocketHelper.GetInstance().Send(Command.Stop);
+                    break;
+                default:
+                    break;
             }
-            else
-            {
-                Message = "Выберите топологию";
-            }
-
         }
     }
 }

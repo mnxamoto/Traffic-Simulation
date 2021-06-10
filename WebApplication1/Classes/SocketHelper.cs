@@ -26,29 +26,19 @@ namespace WebApplication1.Classes
         }
 
         private static Socket server = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-        private Thread Thread1;
 
         public bool IsSend { get; set; }
 
         public bool Connect()
         {
-            //Соединяем сокет с удаленной точкой (сервером)
-            server.Connect(IPAddress.Parse("127.0.0.1"), 1001);
-            Console.Write($"Соединение с [{server.RemoteEndPoint}] установлено");
-
-            IsSend = true;
-
-            //Отдельный поток для приёма входящих пакетов и ответа на них
-            Thread1 = new Thread(delegate ()
+            if (!IsSend)
             {
-                //ReceiveMesssage();
-            });
+                //Соединяем сокет с удаленной точкой (сервером)
+                server.Connect(IPAddress.Parse("127.0.0.1"), 1001);
+                Console.Write($"Соединение с [{server.RemoteEndPoint}] установлено");
 
-            //Запускаем этот поток
-            //Thread1.Start();
-
-            //Отправляем информацию о клиенте на сервер
-            //Send(Command.Connect, "");
+                IsSend = true;
+            }
 
             return true;
         }

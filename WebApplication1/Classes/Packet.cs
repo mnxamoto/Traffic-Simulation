@@ -28,6 +28,7 @@ namespace WebApplication1.Classes
         GetCrossroadses,
         SendCrossroadses,
         GetCars,
-        SendCars
+        SendCars,
+        Stop
     }
 }

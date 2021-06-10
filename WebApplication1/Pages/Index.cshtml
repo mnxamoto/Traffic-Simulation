@@ -8,8 +8,8 @@
 
 <form method="post">
     <div style="position:relative; width: 0px; height: 1000px;">
-        <img id="backgroundImage" style="position: absolute; left: 0px; top: 0px;"/>
-        <img id="mapImage" style="position: absolute; left: 0px; top: 0px;"/>
+        <img id="backgroundImage" style="position: absolute; left: 0px; top: 0px;" />
+        <img id="mapImage" style="position: absolute; left: 0px; top: 0px;" />
     </div>
     <p>Количество строк </p>
     <input type="number" name="countRow" value="5" />
@@ -39,8 +39,10 @@
         <option>Круги</option>
     </select>
     <br><br>
-    <input asp-for="UseTrafficLight"> 
-    <p1>Светофоры</p1> 
+    <input asp-for="UseTrafficLight">
+    <p1>Светофоры</p1>
     <br><br>
-    <input type="submit" value="Подключиться"/>
+    <input type="submit" name="btn1" value="Подключиться" />
+    <br><br>
+    <input type="submit" name="btn1" value="Остановить" />
 </form>

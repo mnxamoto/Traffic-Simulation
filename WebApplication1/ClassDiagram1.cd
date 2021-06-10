@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TrafficSimulation.Classes.Car">
+    <Position X="3.75" Y="1.25" Width="1.5" />
+    <AssociationLine Name="DirectionMotion" Type="TrafficSimulation.Classes.DirectionMotion" FixedFromPoint="true">
+      <Path>
+        <Point X="5.188" Y="2.546" />
+        <Point X="5.188" Y="3" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="DirectionMotionNext" Type="TrafficSimulation.Classes.DirectionMotion" FixedFromPoint="true">
+      <Path>
+        <Point X="3.875" Y="2.546" />
+        <Point X="3.875" Y="3" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACQAAACAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Classes\Car.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DirectionMotion" />
+      <Property Name="DirectionMotionNext" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TrafficSimulation.Classes.Crossroads">
+    <Position X="5.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Classes\Crossroads.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Phase" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TrafficSimulation.Classes.DrawHelper">
+    <Position X="10.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAACACAACAAAAAAAAAABAAAAAAAAAAAQAFEAAAI=</HashCode>
+      <FileName>Classes\DrawHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebApplication1.Classes.Packet">
+    <Position X="7.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Classes\Packet.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="Command" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WebApplication1.Classes.StartInfo">
+    <Position X="9" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAABQAAAAAACAAAAAgAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Classes\Packet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebApplication1.Classes.SocketHelper">
+    <Position X="12.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAEAAAIIiBADAAAAAAAAgAAAAAAI=</HashCode>
+      <FileName>Classes\SocketHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="TrafficSimulation.Classes.DirectionMotion">
+    <Position X="3.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAACACAAAAAAAI=</HashCode>
+      <FileName>Classes\Car.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TrafficSimulation.Classes.Phase">
+    <Position X="5.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAIAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Classes\Crossroads.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="WebApplication1.Classes.Command">
+    <Position X="7.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAQAAAAAAAAAAAAACAACAAAAAAEAQAAAAAAA=</HashCode>
+      <FileName>Classes\Packet.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

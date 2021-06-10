@@ -1,34 +1,35 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+
 a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
 }
 
 /* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+    color: #926ac4;
 }
 
 .btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #12ff00;
+    background-color: #12ff00;
+    border-color: #12ff00;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #12ff00;
+    background-color: #12ff00;
+    border-color: #12ff00;
 }
 
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  font-size: 14px;
-  color: aqua;
+    font-size: 14px;
+    color: #12ff00;
 }
 @media (min-width: 768px) {
   html {
@@ -59,11 +60,15 @@ html {
   min-height: 100%;
 }
 
+header {
+    background-color: darkslateblue;
+}
+
+
 body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
-    background-color: #dee2e6;
-
+    background: linear-gradient(#7d669a,#aaa8ae) fixed;
 }
 .footer {
   position: absolute;
@@ -74,39 +79,42 @@ body {
 }
 p {
     position: relative;
-    left: 1000px;
+    left: 800px;
     right: 24px;
-    bottom: 400px;
+    bottom: 1000px;
     top: auto;
     color: black;
+    font-size: 18px;
 }
 p1 {
     position: relative;
-    left: 1000px;
+    left: 800px;
     right: 24px;
-    bottom: 400px;
+    bottom: 1000px;
     top: auto;
     color: black;
+    font-size: 18px;
 }
 input {
-    
     position: relative;
-    left: 1000px;
+    left: 800px;
     right: 24px;
-    bottom: 400px;
+    bottom: 1000px;
     top: auto;
     border-style: inset;
-    border-color:darkcyan;
-  }
+    border-color: rebeccapurple;
+    font-size: 18px;
+}
 select {
     position: relative;
-    left: 1000px;
+    left: 800px;
     right: 24px;
-    bottom: 400px;
+    bottom: 1000px;
     top: auto;
     border-style: inset;
     border-width: medium;
-    border-color: darkcyan;
+    border-color: rebeccapurple;
+    font-size: 18px;
 }
 
 /*    input [image] {
